@@ -23,6 +23,7 @@ public class Pokemon {
     return stats;
   }
 
+
   public boolean estVainqueurContre(Pokemon autrePokemon) {
     var statsPremier = getStats();
     var statsSecond = autrePokemon.getStats();
