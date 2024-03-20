@@ -5,6 +5,7 @@ import com.montaury.pokebagarre.webapi.PokeBuildApi;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /*
     teste :
@@ -22,7 +23,10 @@ class PokemonTest
         Pokemon poke1 = ConstructeurDePokemon.unPokemon().avecAttaque(50).avecDefense(30).construire();
         Pokemon poke2 = ConstructeurDePokemon.unPokemon().avecAttaque(50).avecDefense(30).construire();
         boolean resultat =  poke1.estVainqueurContre(poke2);
-        System.out.println(resultat?"1er teste passer":"1er teste pas passer");
+        //assert resultat == true;
+        //assertEqual(resultat,true);
+        //System.out.println(resultat?"1er teste passer":"1er teste pas passer");
+        assertThat(resultat).isTrue();
     }
 
     @Test
@@ -31,16 +35,18 @@ class PokemonTest
         Pokemon poke1 = ConstructeurDePokemon.unPokemon().avecAttaque(50).avecDefense(30).construire();
         Pokemon poke2 = ConstructeurDePokemon.unPokemon().avecAttaque(50).avecDefense(10).construire();
         boolean resultat =  poke1.estVainqueurContre(poke2);
-        System.out.println(resultat?"2em teste passer":"2em teste pas passer");
+        //System.out.println(resultat?"2em teste passer":"2em teste pas passer");
+        assertThat(resultat).isTrue();
     }
 
     @Test
-    void devrait_afficher_true_()
+    void devrait_afficher_true()
     {
         Pokemon poke1 = ConstructeurDePokemon.unPokemon().avecAttaque(50).avecDefense(30).construire();
         Pokemon poke2 = ConstructeurDePokemon.unPokemon().avecAttaque(50).avecDefense(30).construire();
         boolean resultat =  poke1.estVainqueurContre(poke2);
-        System.out.println(resultat?"3em teste passer":"3em teste pas passer");
+        //System.out.println(resultat?"3em teste passer":"3em teste pas passer");
+        assertThat(resultat).isTrue();
     }
 
     /*public static void main(String[] args)
